@@ -2,12 +2,16 @@
 Készítsünk relációs adatmodellt egy háziorvosi betegnyilvántartó rendszerhez. Az orvosok elvárásainak
 megfelelően az adatbázisnak tartalmaznia kell a betegek személyi adatait, gyógyszerérzékenységüket, az egyes
 vizsgálatok időpontjait és felírt gyógyszereket.
+
 ### Feltételezzük, hogy:
+
 * egy vizsgálaton több betegség is diagnosztizálható,
 * egy betegségre több gyógyszer is felírható,
 * egy páciens több gyógyszerre is lehet érzékeny,
 * egy vizsgálatot a dátum és a vizsgálat kódja határoz meg egyértelműen.
+
 ### Feladatok
+
 * Azonosítsd az adatbázis egyedtípusait, az attribútumokat, kapcsolatokat!
 * Készítsd el az adatbázis ER-modelljét!
 * Készítsd el az adatbázis Relációs modelljét!
