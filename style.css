@@ -4,41 +4,14 @@
     font-family: sans-serif;
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
-    overflow: hidden;
+    position: relative;
 }
-
-/*
-.navBar {
-    width: 100%;
-    height: 50px;
-    background-color: black;
-}
-
-.navBar ul {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.navBar ul li {
-    list-style: none;
-}
-
-.navBar ul li a {
-    text-decoration: none;
-    color: white;
-    transition: 0.2s ease-in-out;
-}
-
-.navBar ul li a:hover {
-    color: red;
-}
-
-*/
 
 .hDiv {
     position: absolute;
@@ -138,3 +111,73 @@ body {
     align-items: center;
 }
 
+.content {
+    display: grid;
+    gap: 10px;
+    padding: 20px 30px;
+}
+
+.adatok, .erModell, .relaciosModell, .tablakLetrehozasa, .tablakFeltoltese, .lekerdezesek {
+    display: grid;
+    gap: 10px;
+}
+
+.adatok h3 {
+    padding-left: 20px;
+}
+
+.adatok li, .adatok img {
+    padding-left: 40px;
+    list-style: none;
+}
+
+.img {
+    width: 100%;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    
+    .hDiv {
+        display: none;
+    }
+    
+    #menu {
+        display: none;
+    }
+
+    .navBar ul {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .navBar ul li {
+        top: 0;
+        left: 0;
+        width: auto;
+        transition: none;
+    }
+    
+    .navBar ul li a {
+        border-top: none;
+        width: auto;
+        transition: 0.2s ease-in-out;
+    }
+
+    .navBar ul li a:hover {
+        color: cornflowerblue;
+    }
+
+    img {
+        width: 70%;
+    }
+
+}
