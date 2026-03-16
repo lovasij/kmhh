@@ -126,7 +126,7 @@ body {
     padding-left: 20px;
 }
 
-.adatok li, .adatok img {
+.adatok li {
     padding-left: 40px;
     list-style: none;
 }
