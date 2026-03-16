@@ -4,6 +4,10 @@
     font-family: sans-serif;
 }
 
+body {
+    overflow: hidden;
+}
+
 /*
 .navBar {
     width: 100%;
@@ -57,21 +61,24 @@
 .hIcon::before {
     content: "";
     position: absolute;
-    bottom: 8px;
-    width: 25px;
-    height: 4px;
-    background-color: white;
-    border-radius: 4px;
-}
-
-.hIcon::after {
-    content: "";
-    position: absolute;
     top: 8px;
     width: 25px;
     height: 4px;
     background-color: white;
     border-radius: 4px;
+    transition: 0.3s ease-in-out;
+}
+
+.hIcon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
 }
 
 #menu {
@@ -81,10 +88,25 @@
     width: 25px;
     height: 25px;
     display: block;
+    opacity: 0;
 }
 
-#menu:checked ~  ul li {
-    right: 50%;
+#menu:checked ~ .hDiv .hIcon::before {
+    top: 0;
+    rotate: 45deg;
+}
+
+#menu:checked ~ .hDiv .hIcon::after {
+    bottom: 0;
+    rotate: -45deg;
+}
+
+#menu:checked ~ .hDiv .hIcon {
+    width: 0;
+}
+
+#menu:checked ~ ul li {
+    left: 50%;
 }
 
 .navBar {
@@ -97,7 +119,7 @@
 .navBar ul li {
     position: relative;
     top: 50px;
-    right: -100%;
+    left: 100%;
     width: 50%;
     height: 50px;
     background: black;
@@ -115,3 +137,4 @@
     justify-content: center;
     align-items: center;
 }
+
