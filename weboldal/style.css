@@ -193,7 +193,7 @@ pre {
     padding: 10px 15px;
     border-radius: 8px;
     overflow-x: auto;
-    max-width: 800px;
+    max-width: calc(100% - 30px);
     width: 100%;
     white-space: pre-wrap; /* hosszú sorok törése */
     word-wrap: break-word;
@@ -278,6 +278,10 @@ code {
 
     img {
         width: 60%;
+    }
+
+    pre {
+        max-width: 800px;
     }
 
 }
