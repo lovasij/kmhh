@@ -2,7 +2,7 @@ LEKÉRDEZÉSEK
 
 1. Listázd azokat a pácienseket, akiknek a neve „K” betűvel kezdődik!
 
-2.Mely páciensek NEM érzékenyek semmilyen gyógyszerre
+2.Mely páciensek NEM érzékenyek semmilyen gyógyszerre?
 
 3. Hány vizsgálat történt 1996-02-11-én?
 
