@@ -1,0 +1,50 @@
+TÁBLÁK ELKÉSZÍTÉSE
+
+CREATE DATABASE 112e_OB;
+
+CREATE TABLE 112e_ob.paciens (
+    pid CHAR(11) PRIMARY KEY,
+    nev VARCHAR(50),
+    cim VARCHAR(100),
+    telefon VARCHAR(20)
+);
+
+CREATE TABLE 112e_OB.vizsgalat (
+    vid INT PRIMARY KEY,
+    pid CHAR(11),
+    datum DATE,
+    FOREIGN KEY (pid) REFERENCES PACIENS(pid)
+);
+
+CREATE TABLE 112e_ob.betegseg (
+    bnev VARCHAR(50) PRIMARY KEY
+);
+
+CREATE TABLE 112e_ob.gyogyszer (
+    gynev VARCHAR(50) PRIMARY KEY
+);
+
+CREATE TABLE 112e_ob.mit_kap (
+    bnev VARCHAR(50),
+    gynev VARCHAR(50),
+    PRIMARY KEY (bnev, gynev),
+    FOREIGN KEY (bnev) REFERENCES betegseg(bnev),
+    FOREIGN KEY (gynev) REFERENCES gyogyszer(gynev)
+);
+
+CREATE TABLE 112e_ob.mire_erzekeny (
+    pid CHAR(11),
+    gynev VARCHAR(50),
+    PRIMARY KEY (pid, gynev),
+    FOREIGN KEY (pid) REFERENCES paciens(pid),
+    FOREIGN KEY (gynev) REFERENCES gyogyszer(gynev)
+);
+
+CREATE TABLE 112e_ob.diagnozis (
+    vid INT,
+    datum DATE,
+    bnev VARCHAR(50),
+    PRIMARY KEY (vid, bnev),
+    FOREIGN KEY (vid) REFERENCES vizsgalat(vid),
+    FOREIGN KEY (bnev) REFERENCES betegseg(bnev)
+);
