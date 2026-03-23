@@ -4,7 +4,7 @@ LEKÉRDEZÉSEK
 SELECT nev "Név" FROM 112e_ob.paciens
 WHERE nev LIKE 'K%';
 
-2.Mely páciensek NEM érzékenyek semmilyen gyógyszerre
+2.Mely páciensek NEM érzékenyek semmilyen gyógyszerre?
 SELECT nev "Név" FROM 112e_ob.paciens
 WHERE pid NOT IN (SELECT pid FROM 112e_ob.mire_erzekeny);
 
