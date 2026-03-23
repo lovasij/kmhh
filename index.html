@@ -9,7 +9,7 @@
 <body>
     
     <nav class="navBar">
-        <input type="checkbox" id="menu">
+        <input type="checkbox" id="menu" class="toggle">
         <div class="hDiv">
             <div class="hIcon"></div>
             <label for="menu"></label>
@@ -27,51 +27,55 @@
 
     <div class="content">
 
-        <div class="adatok" id="adatok">
-            <h2>Adatok:</h2>
-            <h3>Készítők:</h3>
-            <ul>
-                <li>Karpf Marcell - főnök</li>
-                <li>Hajdu Hunor - alkalmazott</li>
-            </ul>
-            <h3>Feladatok:</h3>
-            <div class="img">
-                <img src="kepek/feladatok.png" alt="Feladatok" title="Feladatok">
+        <div class="timeline"></div>
+
+        <div class="wrapper">
+            <div class="adatok" id="adatok">
+                <h2 class="wItem">Adatok:</h2>
+                <h3>Készítők:</h3>
+                <ul>
+                    <li>Karpf Marcell - főnök</li>
+                    <li>Hajdu Hunor - alkalmazott</li>
+                </ul>
+                <h3>Feladatok:</h3>
+                <div class="img">
+                    <img src="kepek/feladatok.png" alt="Feladatok" title="Feladatok">
+                </div>
             </div>
-        </div>
-
-        <div class="erModell" id="erModell">
-            <h2>ER-modell</h2>
-            <div class="img">
-                <img src="kepek/ER-modell.png" alt="ER-modell" title="ER-modell">
+    
+            <div class="erModell" id="erModell">
+                <h2 class="wItem">ER-modell</h2>
+                <div class="img">
+                    <img src="kepek/ER-modell.png" alt="ER-modell" title="ER-modell">
+                </div>
             </div>
-        </div>
-
-        <div class="relaciosModell" id="relaciosModell">
-            <h2>Relációs-modell</h2>
-            <div class="img">
-                <img src="kepek/Relacios-modell.png" alt="Relációs-modell" title="Relációs-modell">
+    
+            <div class="relaciosModell" id="relaciosModell">
+                <h2 class="wItem">Relációs-modell</h2>
+                <div class="img">
+                    <img src="kepek/Relacios-modell.png" alt="Relációs-modell" title="Relációs-modell">
+                </div>
             </div>
-        </div>
-
-        <div class="tablakLetrehozasa" id="tablakLetrehozasa">
-            <h2>Táblák létrehozása</h2>
-            <p></p>
-        </div>
-
-        <div class="tablakFeltoltese" id="tablakFeltoltese">
-            <h2>Táblák feltöltése</h2>
-            <p></p>
-        </div>
-
-        <div class="lekerdezesek" id="lekerdezesek">
-            <h2>Lekérdezések</h2>
-            <p></p>
+    
+            <div class="tablakLetrehozasa" id="tablakLetrehozasa">
+                <h2 class="wItem">Táblák létrehozása</h2>
+                <p></p>
+            </div>
+    
+            <div class="tablakFeltoltese" id="tablakFeltoltese">
+                <h2 class="wItem">Táblák feltöltése</h2>
+                <p></p>
+            </div>
+    
+            <div class="lekerdezesek" id="lekerdezesek">
+                <h2 class="wItem">Lekérdezések</h2>
+                <p></p>
+            </div>
         </div>
 
     </div>
 
-
+    <script src="script.js"></script>
 
 </body>
 </html>
