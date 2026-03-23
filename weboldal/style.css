@@ -131,7 +131,7 @@ body {
 
 .timeline {
     position: relative;
-    width: 6px;
+    min-width: 6px;
     align-self: stretch;
     background-color: black;
     border-radius: 10px;
@@ -255,7 +255,7 @@ code {
     }
 
     .timeline {
-        width: 8px;
+        min-width: 8px;
     }
 
     .wrapper {

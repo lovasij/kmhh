@@ -115,56 +115,56 @@
                 <h2 class="wItem">Táblák feltöltése</h2>
 <pre>
 <code>
-INSERT INTO 112e_ob.paciens (pid, nev, cim, telefon) VALUES
-    ('17402213339', 'Kovács Krisztián', 'Hajdúhadház, Szűk u. 1.', '(66) 329-896'),
-    ('17303313254', 'Andrészki Dezső', 'Téglás, Kossuth utca 125.', '(52) 421-643'),
-    ('25602143598', 'Kajár Miklósné', 'Téglás, Petőfi út 12.', '(52) 342-453'),
-    ('26511123265', 'Kocsis Béláné', 'Téglás, Március 15. utca 3.', '(52) 384-345'),
-    ('14404013214', 'Rézbányai Ernő', 'Hajdúhadház, Bocskai út 35.', '(66) 325-643');
+    INSERT INTO 112e_ob.paciens (pid, nev, cim, telefon) VALUES
+        ('17402213339', 'Kovács Krisztián', 'Hajdúhadház, Szűk u. 1.', '(66) 329-896'),
+        ('17303313254', 'Andrészki Dezső', 'Téglás, Kossuth utca 125.', '(52) 421-643'),
+        ('25602143598', 'Kajár Miklósné', 'Téglás, Petőfi út 12.', '(52) 342-453'),
+        ('26511123265', 'Kocsis Béláné', 'Téglás, Március 15. utca 3.', '(52) 384-345'),
+        ('14404013214', 'Rézbányai Ernő', 'Hajdúhadház, Bocskai út 35.', '(66) 325-643');
 
-INSERT INTO 112e_ob.betegseg (bnev) VALUES
-    ('grippe'),
-    ('hepatitis'),
-    ('encefaritis'),
-    ('encephalomylitis'),
-    ('pneumonia'),
-    ('bronchitis');
+    INSERT INTO 112e_ob.betegseg (bnev) VALUES
+        ('grippe'),
+        ('hepatitis'),
+        ('encefaritis'),
+        ('encephalomylitis'),
+        ('pneumonia'),
+        ('bronchitis');
 
-INSERT INTO 112e_ob.gyogyszer (gynev) VALUES
-    ('Semicilin'),
-    ('Prednisolon'),
-    ('Medrol'),
-    ('Metyl-pred'),
-    ('Ceclor'),
-    ('Diflucan'),
-    ('Calciphedrin');
+    INSERT INTO 112e_ob.gyogyszer (gynev) VALUES
+        ('Semicilin'),
+        ('Prednisolon'),
+        ('Medrol'),
+        ('Metyl-pred'),
+        ('Ceclor'),
+        ('Diflucan'),
+        ('Calciphedrin');
 
-INSERT INTO 112e_ob.vizsgalat (vid, pid, datum) VALUES
-    (1, '17402213339', '1996-02-11'),
-    (2, '17303313254', '1996-02-11'),
-    (3, '25602143598', '1996-02-11'),
-    (4, '26511123265', '1996-02-11'),
-    (5, '14404013214', '1996-02-11');
+    INSERT INTO 112e_ob.vizsgalat (vid, pid, datum) VALUES
+        (1, '17402213339', '1996-02-11'),
+        (2, '17303313254', '1996-02-11'),
+        (3, '25602143598', '1996-02-11'),
+        (4, '26511123265', '1996-02-11'),
+        (5, '14404013214', '1996-02-11');
 
-INSERT INTO 112e_ob.mit_kap (bnev, gynev) VALUES
-    ('grippe', 'Semicilin'),
-    ('hepatitis', 'Prednisolon'),
-    ('encefaritis', 'Medrol'),
-    ('encephalomylitis', 'Metyl-pred'),
-    ('pneumonia', 'Ceclor'),
-    ('bronchitis', 'Calciphedrin');
+    INSERT INTO 112e_ob.mit_kap (bnev, gynev) VALUES
+        ('grippe', 'Semicilin'),
+        ('hepatitis', 'Prednisolon'),
+        ('encefaritis', 'Medrol'),
+        ('encephalomylitis', 'Metyl-pred'),
+        ('pneumonia', 'Ceclor'),
+        ('bronchitis', 'Calciphedrin');
 
-INSERT INTO 112e_ob.mire_erzekeny (pid, gynev) VALUES
-    ('26511123265', 'Diflucan'),
-    ('26511123265', 'Calciphedrin');
+    INSERT INTO 112e_ob.mire_erzekeny (pid, gynev) VALUES
+        ('26511123265', 'Diflucan'),
+        ('26511123265', 'Calciphedrin');
 
-INSERT INTO 112e_ob.diagnozis (vid, datum, bnev) VALUES
-    (1, '1996-02-11', 'encefaritis'),
-    (1, '1996-02-11', 'encephalomylitis'),
-    (2, '1996-02-11', 'grippe'),
-    (3, '1996-02-11', 'hepatitis'),
-    (4, '1996-02-11', 'pneumonia'),
-    (5, '1996-02-11', 'grippe');
+    INSERT INTO 112e_ob.diagnozis (vid, datum, bnev) VALUES
+        (1, '1996-02-11', 'encefaritis'),
+        (1, '1996-02-11', 'encephalomylitis'),
+        (2, '1996-02-11', 'grippe'),
+        (3, '1996-02-11', 'hepatitis'),
+        (4, '1996-02-11', 'pneumonia'),
+        (5, '1996-02-11', 'grippe');
 </code>
 </pre>
             </div>
@@ -172,65 +172,95 @@ INSERT INTO 112e_ob.diagnozis (vid, datum, bnev) VALUES
             <div class="lekerdezesek" id="lekerdezesek">
                 <h2 class="wItem">Lekérdezések</h2>
                 <h4>1. Listázd azokat a pácienseket, akiknek a neve „K” betűvel kezdődik!</h4>
-<pre><code>SELECT nev AS "Név" 
-FROM 112e_ob.paciens
-WHERE nev LIKE 'K%';
-</code></pre>
+<pre>
+<code>
+    SELECT nev AS "Név" 
+    FROM 112e_ob.paciens
+    WHERE nev LIKE 'K%';
+</code>
+</pre>
                 <h4>2.Mely páciensek NEM érzékenyek semmilyen gyógyszerre?</h4>
-<pre><code>SELECT nev "Név" FROM 112e_ob.paciens
-WHERE pid NOT IN (SELECT pid FROM 112e_ob.mire_erzekeny);
-</code></pre>
+<pre>
+<code>
+    SELECT nev "Név" FROM 112e_ob.paciens
+    WHERE pid NOT IN (SELECT pid FROM 112e_ob.mire_erzekeny);
+</code>
+</pre>
                 <h4>3. Hány vizsgálat történt 1996-02-11-én?</h4>
-<pre><code>SELECT COUNT(*) "Vizsgálatok száma" FROM 112e_ob.vizsgalat
-WHERE datum = '1996-02-11';
-</code></pre>
+<pre>
+<code>
+    SELECT COUNT(*) "Vizsgálatok száma" FROM 112e_ob.vizsgalat
+    WHERE datum = '1996-02-11';
+</code>
+</pre>
                 <h4>4. Listázd a páciensek nevét és a diagnosztizált betegségeiket!</h4>
-<pre><code>SELECT p.nev " Páciens neve", d.bnev "Betegség neve" FROM 112e_ob.paciens p
-JOIN 112e_ob.vizsgalat v ON p.pid = v.pid
-JOIN 112e_ob.diagnozis d ON v.vid = d.vid;
-</code></pre>
+<pre>
+<code>
+    SELECT p.nev " Páciens neve", d.bnev "Betegség neve" FROM 112e_ob.paciens p
+    JOIN 112e_ob.vizsgalat v ON p.pid = v.pid
+    JOIN 112e_ob.diagnozis d ON v.vid = d.vid;
+</code>
+</pre>
                 <h4>5. Hány különböző betegséget diagnosztizáltak egyes pácienseknél?</h4>
-<pre><code>SELECT p.nev "Páciens neve", COUNT(DISTINCT d.bnev) "Betegségek száma"
-FROM 112e_ob.paciens p
-JOIN 112e_ob.vizsgalat v ON p.pid = v.pid
-JOIN 112e_ob.diagnozis d ON v.vid = d.vid
-GROUP BY p.nev;
-</code></pre>
+<pre>
+<code>
+    SELECT p.nev "Páciens neve", COUNT(DISTINCT d.bnev) "Betegségek száma"
+    FROM 112e_ob.paciens p
+    JOIN 112e_ob.vizsgalat v ON p.pid = v.pid
+    JOIN 112e_ob.diagnozis d ON v.vid = d.vid
+    GROUP BY p.nev;
+</code>
+</pre>
                 <h4>6. Mely vizsgálatokhoz tartozik több mint egy diagnózis?</h4>
-<pre><code>SELECT DISTINCT p.nev, me.gynev FROM 112e_ob.paciens p
-JOIN 112e_ob.vizsgalat v ON p.pid = v.pid
-JOIN 112e_ob.diagnozis d ON v.vid = d.vid
-JOIN 112e_ob.mit_kap m ON d.bnev = m.bnev
-JOIN 112e_ob.mire_erzekeny me 
-    ON p.pid = me.pid AND m.gynev = me.gynev;
-</code></pre>
+<pre>
+<code>
+    SELECT DISTINCT p.nev, me.gynev FROM 112e_ob.paciens p
+    JOIN 112e_ob.vizsgalat v ON p.pid = v.pid
+    JOIN 112e_ob.diagnozis d ON v.vid = d.vid
+    JOIN 112e_ob.mit_kap m ON d.bnev = m.bnev
+    JOIN 112e_ob.mire_erzekeny me 
+        ON p.pid = me.pid AND m.gynev = me.gynev;
+</code>
+</pre>
                 <h4>7. Hány páciens érzékeny egyes gyógyszerekre?</h4>
-<pre><code>SELECT v.vid "Vizsgálat-id", COUNT(d.bnev) "Betegségek száma"
-FROM 112e_ob.vizsgalat v
-JOIN 112e_ob.diagnozis d ON v.vid = d.vid
-GROUP BY v.vid
-HAVING COUNT(d.bnev) > 1;
-</code></pre>
+<pre>
+<code>
+    SELECT v.vid "Vizsgálat-id", COUNT(d.bnev) "Betegségek száma"
+    FROM 112e_ob.vizsgalat v
+    JOIN 112e_ob.diagnozis d ON v.vid = d.vid
+    GROUP BY v.vid
+    HAVING COUNT(d.bnev) > 1;
+</code>
+</pre>
                 <h4>8. Listázd azokat a betegségeket, amelyeket legalább 2 különböző vizsgálat során diagnosztizáltak!</h4>
-<pre><code>SELECT g.gynev "Gyógyszer neve", COUNT(me.pid) "Érzékenyek száma"
-FROM 112e_ob.gyogyszer g
-JOIN 112e_ob.mire_erzekeny me ON g.gynev = me.gynev
-GROUP BY g.gynev;
-</code></pre>
+<pre>
+<code>
+    SELECT g.gynev "Gyógyszer neve", COUNT(me.pid) "Érzékenyek száma"
+    FROM 112e_ob.gyogyszer g
+    JOIN 112e_ob.mire_erzekeny me ON g.gynev = me.gynev
+    GROUP BY g.gynev;
+</code>
+</pre>
                 <h4>9. Mely pácienseknek volt pontosan 1 vizsgálatuk?</h4>
-<pre><code>SELECT d.bnev "Betegség neve", COUNT(DISTINCT d.vid) "Diagnózisok száma"
-FROM 112e_ob.diagnozis d
-JOIN 112e_ob.betegseg b ON d.bnev = b.bnev
-GROUP BY d.bnev
-HAVING COUNT(DISTINCT d.vid) >= 2;
-</code></pre>
+<pre>
+<code>
+    SELECT d.bnev "Betegség neve", COUNT(DISTINCT d.vid) "Diagnózisok száma"
+    FROM 112e_ob.diagnozis d
+    JOIN 112e_ob.betegseg b ON d.bnev = b.bnev
+    GROUP BY d.bnev
+    HAVING COUNT(DISTINCT d.vid) >= 2;
+</code>
+</pre>
                 <h4>10. Listázd ki a pácienseket, a betegségeiket és a gyógyszereiket!</h4>
-<pre><code>SELECT p.nev "Beteg neve"
-FROM 112e_ob.vizsgalat v
-JOIN 112e_ob.paciens p ON v.pid = p.pid
-GROUP BY v.pid
-HAVING COUNT(*) = 1;
-</code></pre>
+<pre>
+<code>
+    SELECT p.nev "Beteg neve"
+    FROM 112e_ob.vizsgalat v
+    JOIN 112e_ob.paciens p ON v.pid = p.pid
+    GROUP BY v.pid
+    HAVING COUNT(*) = 1;
+</code>
+</pre>
                 
             </div>
         </div>
