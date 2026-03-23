@@ -1,0 +1,21 @@
+LEKÉRDEZÉSEK
+
+1. Listázd azokat a pácienseket, akiknek a neve „K” betűvel kezdődik!
+
+2.Mely páciensek NEM érzékenyek semmilyen gyógyszerre
+
+3. Hány vizsgálat történt 1996-02-11-én?
+
+4. Listázd a páciensek nevét és a diagnosztizált betegségeiket!
+
+5. Hány különböző betegséget diagnosztizáltak egyes pácienseknél?
+
+6. Mely vizsgálatokhoz tartozik több mint egy diagnózis?
+
+7. Hány páciens érzékeny egyes gyógyszerekre?
+
+8. Listázd azokat a betegségeket, amelyeket legalább 2 különböző vizsgálat során diagnosztizáltak!
+
+9. Mely pácienseknek volt pontosan 1 vizsgálatuk?
+
+10. Listázd ki a pácienseket, a betegségeiket és a gyógyszereiket!
