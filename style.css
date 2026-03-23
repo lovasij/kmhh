@@ -129,15 +129,44 @@ body {
     align-items: center;
 }
 
+.timeline {
+    position: relative;
+    width: 6px;
+    align-self: stretch;
+    background-color: black;
+    border-radius: 10px;
+}
+
 .content {
+    display: flex;
+    gap: 15px;
+    padding: 20px 30px;
+}
+
+.wrapper {
     display: grid;
     gap: 10px;
-    padding: 20px 30px;
 }
 
 .adatok, .erModell, .relaciosModell, .tablakLetrehozasa, .tablakFeltoltese, .lekerdezesek {
     display: grid;
     gap: 10px;
+}
+
+h2 {
+    position: relative;
+}
+
+.wItem::before {
+    content: "";
+    position: absolute;
+    top: 35%;
+    left: -15px;
+    width: 12px;
+    height: 6px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: black;
 }
 
 .adatok h3 {
@@ -200,8 +229,35 @@ img {
         color: cornflowerblue;
     }
 
+    .content {
+        gap: 30px;
+        padding: 30px 80px;
+    }
+
+    .timeline {
+        width: 8px;
+    }
+
+    .wrapper {
+        gap: 15px;
+    }
+
+    .wItem::before {
+        top: 35%;
+        left: -30px;
+        width: 18px;
+        height: 8px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: black;
+    }
+    
+    .adatok, .erModell, .relaciosModell, .tablakLetrehozasa, .tablakFeltoltese, .lekerdezesek {
+        gap: 20px;
+    }
+
     img {
-        width: 70%;
+        width: 60%;
     }
 
 }
