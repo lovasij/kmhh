@@ -172,15 +172,65 @@ INSERT INTO 112e_ob.diagnozis (vid, datum, bnev) VALUES
             <div class="lekerdezesek" id="lekerdezesek">
                 <h2 class="wItem">Lekérdezések</h2>
                 <p>1. Listázd azokat a pácienseket, akiknek a neve „K” betűvel kezdődik!</p>
+<pre><code>SELECT nev AS "Név" 
+FROM 112e_ob.paciens
+WHERE nev LIKE 'K%';
+</code></pre>
                 <p>2.Mely páciensek NEM érzékenyek semmilyen gyógyszerre?</p>
+<pre><code>SELECT nev "Név" FROM 112e_ob.paciens
+WHERE pid NOT IN (SELECT pid FROM 112e_ob.mire_erzekeny);
+</code></pre>
                 <p>3. Hány vizsgálat történt 1996-02-11-én?</p>
+<pre><code>SELECT COUNT(*) "Vizsgálatok száma" FROM 112e_ob.vizsgalat
+WHERE datum = '1996-02-11';
+</code></pre>
                 <p>4. Listázd a páciensek nevét és a diagnosztizált betegségeiket!</p>
+<pre><code>SELECT p.nev " Páciens neve", d.bnev "Betegség neve" FROM 112e_ob.paciens p
+JOIN 112e_ob.vizsgalat v ON p.pid = v.pid
+JOIN 112e_ob.diagnozis d ON v.vid = d.vid;
+</code></pre>
                 <p>5. Hány különböző betegséget diagnosztizáltak egyes pácienseknél?</p>
+<pre><code>SELECT p.nev "Páciens neve", COUNT(DISTINCT d.bnev) "Betegségek száma"
+FROM 112e_ob.paciens p
+JOIN 112e_ob.vizsgalat v ON p.pid = v.pid
+JOIN 112e_ob.diagnozis d ON v.vid = d.vid
+GROUP BY p.nev;
+</code></pre>
                 <p>6. Mely vizsgálatokhoz tartozik több mint egy diagnózis?</p>
+<pre><code>SELECT DISTINCT p.nev, me.gynev FROM 112e_ob.paciens p
+JOIN 112e_ob.vizsgalat v ON p.pid = v.pid
+JOIN 112e_ob.diagnozis d ON v.vid = d.vid
+JOIN 112e_ob.mit_kap m ON d.bnev = m.bnev
+JOIN 112e_ob.mire_erzekeny me 
+    ON p.pid = me.pid AND m.gynev = me.gynev;
+</code></pre>
                 <p>7. Hány páciens érzékeny egyes gyógyszerekre?</p>
+<pre><code>SELECT v.vid "Vizsgálat-id", COUNT(d.bnev) "Betegségek száma"
+FROM 112e_ob.vizsgalat v
+JOIN 112e_ob.diagnozis d ON v.vid = d.vid
+GROUP BY v.vid
+HAVING COUNT(d.bnev) > 1;
+</code></pre>
                 <p>8. Listázd azokat a betegségeket, amelyeket legalább 2 különböző vizsgálat során diagnosztizáltak!</p>
+<pre><code>SELECT g.gynev "Gyógyszer neve", COUNT(me.pid) "Érzékenyek száma"
+FROM 112e_ob.gyogyszer g
+JOIN 112e_ob.mire_erzekeny me ON g.gynev = me.gynev
+GROUP BY g.gynev;
+</code></pre>
                 <p>9. Mely pácienseknek volt pontosan 1 vizsgálatuk?</p>
+<pre><code>SELECT d.bnev "Betegség neve", COUNT(DISTINCT d.vid) "Diagnózisok száma"
+FROM 112e_ob.diagnozis d
+JOIN 112e_ob.betegseg b ON d.bnev = b.bnev
+GROUP BY d.bnev
+HAVING COUNT(DISTINCT d.vid) >= 2;
+</code></pre>
                 <p>10. Listázd ki a pácienseket, a betegségeiket és a gyógyszereiket!</p>
+<pre><code>SELECT p.nev "Beteg neve"
+FROM 112e_ob.vizsgalat v
+JOIN 112e_ob.paciens p ON v.pid = p.pid
+GROUP BY v.pid
+HAVING COUNT(*) = 1;
+</code></pre>
                 
             </div>
         </div>
