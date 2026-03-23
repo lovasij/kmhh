@@ -14,3 +14,10 @@ links.forEach(link =>{
         }
     })
 })
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth >= 992) {
+        html.classList.remove("active")
+        toggle.checked = false
+    }
+})
